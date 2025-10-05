@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { Spells } from './spells';
+import { SpellsApi } from './spells-api';
 
-describe('Spells', () => {
-  let service: Spells;
+describe('SpellsApi', () => {
+  let service: SpellsApi;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(Spells);
+    service = TestBed.inject(SpellsApi);
   });
 
   it('should be created', () => {

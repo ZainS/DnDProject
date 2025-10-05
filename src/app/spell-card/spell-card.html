@@ -1,0 +1,40 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ spell.name }}</mat-card-title>
+    <mat-card-subtitle>Level {{ spell.level }} {{ spell.school.name }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ spell.desc }}</p>
+    <p><strong>Casting Time:</strong> {{ spell.casting_time }}</p>
+    <p><strong>Range:</strong> {{ spell.range }}</p>
+    <p><strong>Components:</strong> {{ spell.components }}</p>
+    @if (spell.material) {
+      <p><strong>Material:</strong> {{ spell.material }}</p>
+    }
+    <p><strong>Duration:</strong> {{ spell.duration }}</p>
+    @if (spell.concentration) {
+      <p><strong>Concentration:</strong> Yes</p>
+    }
+    @if (spell.ritual) {
+      <p><strong>Ritual:</strong> Yes</p>
+    }
+    <p><strong>Classes:</strong> @for (playerClass of spell.classes; track playerClass.index) {
+    @if (!$last) {
+      {{ playerClass.name }},
+    } @else if ($last) {
+      {{ playerClass.name }}
+    }
+  }
+    </p>
+    @if (spell.subclasses.length > 0) {
+      <p><strong>Subclasses:</strong> @for (playerSubClass of spell.subclasses; track playerSubClass.index) {
+        @if (!$last) {
+          {{ playerSubClass.name }},
+        } @else if ($last) {
+          {{ playerSubClass.name }}
+        }
+      }
+      </p>
+    }
+  </mat-card-content>
+</mat-card>
