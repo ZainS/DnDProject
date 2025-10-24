@@ -1,6 +1,8 @@
-<ul>
-  @for (spell of spellList; track spell.index){
-    <app-spell-card [spell]="spell" ></app-spell-card>
-  }
-</ul>
+  <div class="card-container">
+    @for (spell of spellList; track spell.index){
+      <app-spell-card class="card" [spell]="spell" ></app-spell-card>
+    }
+  </div>
+
+
 
