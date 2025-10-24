@@ -4,7 +4,7 @@ import {SpellsList} from './spells-list/spells-list';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SpellsList],
+  imports: [SpellsList],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

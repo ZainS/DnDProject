@@ -18,9 +18,13 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle} f
 
 export class SpellCard {
   @Input() spell!: Spell;
+  frontFace = true;
 
-  getClass(){
-    console.log(this.spell.classes );
+  onMouseEnter(): void {
+    this.frontFace = false;
   }
 
+  onMouseLeave(): void {
+    this.frontFace = true;
+  }
 }
