@@ -22,11 +22,9 @@ export class SpellsList {
 
   constructor() {
     this.loading = true;
-    console.log('Fetching spell list...', this.loading);
     this.spellService.getAllSpellDetails().subscribe((results: any) => {
       this.spellList = results;
       this.loading = false;
-      console.log('should be false: ',this.loading);
     });
   }
 
