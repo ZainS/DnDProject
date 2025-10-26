@@ -1,8 +1,15 @@
+@if (loading) {
+  <div style="position:fixed; inset:0; display:flex; align-items:center; justify-content:center;">
+    <mat-spinner></mat-spinner>
+  </div>
+} @else {
   <div class="card-container">
-    @for (spell of spellList; track spell.index){
-      <app-spell-card class="card" [spell]="spell" ></app-spell-card>
+    @for (spell of spellList; track spell.index) {
+      <app-spell-card class="card" [spell]="spell"></app-spell-card>
     }
   </div>
+}
+
 
 
 
