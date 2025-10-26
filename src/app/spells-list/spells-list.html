@@ -7,6 +7,15 @@
     <mat-label>Search Spells</mat-label>
     <input matInput placeholder="Enter spell name" [(ngModel)]="searchSpell"/>
   </mat-form-field>
+  <mat-form-field>
+    <mat-label>Spell Level</mat-label>
+    <mat-select [(ngModel)]="selectedLevels" (ngModelChange)="getSpellByLevel($event)" placeholder="Select level" multiple>
+      <mat-option [value]="0">Cantrip</mat-option>
+      @for (lvl of [1, 2, 3, 4, 5, 6, 7, 8, 9]; track lvl) {
+        <mat-option [value]="lvl">{{ lvl }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
   <div class="card-container"
        style="display:flex; flex-wrap:wrap; justify-content:center; gap:16px; align-items:flex-start;">
     @for (spell of (spellList || []) | filterSpellSearch: searchSpell; track spell.index) {
