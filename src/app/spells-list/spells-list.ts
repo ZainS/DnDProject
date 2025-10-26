@@ -2,12 +2,21 @@ import {Component, inject} from '@angular/core';
 import {SpellsApi} from '../services/spells-api';
 import {SpellCard} from '../spell-card/spell-card';
 import {MatProgressSpinner} from '@angular/material/progress-spinner';
+import {MatFormField} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
+import {MatInput, MatLabel} from '@angular/material/input';
+import {FilterSpellSearchPipe} from '../utils/filter-search-pipe';
 
 @Component({
   selector: 'app-spells-list',
   imports: [
     SpellCard,
-    MatProgressSpinner
+    MatProgressSpinner,
+    MatFormField,
+    FormsModule,
+    MatInput,
+    MatLabel,
+    FilterSpellSearchPipe
   ],
   templateUrl: './spells-list.html',
   styleUrl: './spells-list.css'
@@ -15,9 +24,8 @@ import {MatProgressSpinner} from '@angular/material/progress-spinner';
 export class SpellsList {
 
   spellService = inject(SpellsApi)
-
   spellList: any[] | undefined;
-
+  searchSpell: string = '';
   loading: boolean;
 
   constructor() {
