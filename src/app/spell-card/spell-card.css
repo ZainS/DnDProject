@@ -1,0 +1,11 @@
+.front {
+  background-color: coral;
+}
+
+.back {
+  background-color: aqua;
+  transition-property: background-color;
+  transition-duration: 1s;
+}
+
+

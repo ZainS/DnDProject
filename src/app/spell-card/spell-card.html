@@ -1,4 +1,4 @@
-<mat-card (mouseleave)="onMouseLeave()" (mouseenter)="onMouseEnter()">
+<mat-card (mouseleave)="onMouseLeave()" (mouseenter)="onMouseEnter()" [ngClass] = "frontFace?'front':'back'">
   <mat-card-header>
     <mat-card-title style="justify-content: center; align-items: center;">{{ spell.name }}</mat-card-title>
     <mat-card-subtitle>Level {{ spell.level }} {{ spell.school.name }}</mat-card-subtitle>

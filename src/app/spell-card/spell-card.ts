@@ -1,6 +1,8 @@
 import {Component, Input} from '@angular/core';
 import {Spell} from '../spell';
 import {MatCard, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle} from '@angular/material/card';
+import {NgClass} from '@angular/common';
+
 @Component({
   selector: 'app-spell-card',
   imports: [
@@ -8,10 +10,11 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle} f
     MatCardHeader,
     MatCardTitle,
     MatCardSubtitle,
-    MatCardContent
+    MatCardContent,
+    NgClass
   ],
   templateUrl: './spell-card.html',
-  styleUrl: './spell-card.css'
+  styleUrl: './spell-card.css',
 })
 
 
